@@ -7,7 +7,7 @@
 //
 
 
-import Foundation
+import UIKit
 
 protocol NetworkServiceProtocol: AnyObject {
 
@@ -42,11 +42,26 @@ extension NetworkService: NetworkServiceProtocol {
                 let decodedResponse = try JSONDecoder().decode(T.self, from: data)
                 return .success(decodedResponse)
             } catch {
+                let alert = UIAlertController(title: "Ошибка", message: "\(error)", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                if let topViewController = self.getTopViewController() {
+                    topViewController.present(alert, animated: true, completion: nil)
+                }
                 return .failure(error)
             }
         } else if let error = error {
+            let alert = UIAlertController(title: "Ошибка", message: "\(error)", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            if let topViewController = self.getTopViewController() {
+                topViewController.present(alert, animated: true, completion: nil)
+            }
             return .failure(error)
         } else {
+            let alert = UIAlertController(title: "Ошибка", message: "\(APIError.invalidResponse)", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            if let topViewController = self.getTopViewController() {
+                topViewController.present(alert, animated: true, completion: nil)
+            }
             return .failure(APIError.invalidResponse)
         }
     }
@@ -84,5 +99,21 @@ extension NetworkService: NetworkServiceProtocol {
         urlRequest.httpMethod = method.rawValue
         urlRequest.httpBody = body
         return urlRequest
+    }
+    
+    func getTopViewController() -> UIViewController? {
+        let keyWindow = UIApplication.shared.connectedScenes
+                        .filter({$0.activationState == .foregroundActive})
+                        .map({$0 as? UIWindowScene})
+                        .compactMap({$0})
+                        .first?.windows
+                        .filter({$0.isKeyWindow}).first
+        if var topViewController = keyWindow?.rootViewController {
+            while let presentedViewController = topViewController.presentedViewController {
+                topViewController = presentedViewController
+            }
+            return topViewController
+        }
+        return nil
     }
 }

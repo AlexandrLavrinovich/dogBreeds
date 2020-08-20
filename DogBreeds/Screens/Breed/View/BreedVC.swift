@@ -75,11 +75,6 @@ private extension BreedVC {
     
     @objc func share(_ sender: UIBarButtonItem ) {
         let url = viewModel.cells[row].url
-        let indexPath = IndexPath(item: row, section: 0)
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BreedCell.string, for: indexPath) as? BreedCell
-        
-//        let item: [AnyObject] = [cell?.imageBreed.image as AnyObject]
-//        let activity = UIActivityViewController(activityItems: item as [AnyObject], applicationActivities: nil)
         let activity = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         present(activity, animated: true)
     }
