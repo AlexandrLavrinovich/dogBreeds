@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavouriteVC" customModule="DogBreeds" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="JEh-7L-Goy" id="MeX-d2-uS4"/>
+                <outlet property="view" destination="Tcz-P2-64Y" id="kAC-6F-Eds"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Tcz-P2-64Y">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JEh-7L-Goy">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6ZV-ef-rrd">
+                    <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="kYB-Pa-nod" firstAttribute="trailing" secondItem="JEh-7L-Goy" secondAttribute="trailing" id="R2N-ej-kHZ"/>
+                <constraint firstItem="JEh-7L-Goy" firstAttribute="top" secondItem="kYB-Pa-nod" secondAttribute="top" id="XuO-qk-y2b"/>
+                <constraint firstItem="kYB-Pa-nod" firstAttribute="bottom" secondItem="JEh-7L-Goy" secondAttribute="bottom" id="ll3-2n-bg2"/>
+                <constraint firstItem="6ZV-ef-rrd" firstAttribute="centerY" secondItem="kYB-Pa-nod" secondAttribute="centerY" id="obS-h3-v47"/>
+                <constraint firstItem="kYB-Pa-nod" firstAttribute="centerX" secondItem="6ZV-ef-rrd" secondAttribute="centerX" id="ogz-Mc-u6J"/>
+                <constraint firstItem="JEh-7L-Goy" firstAttribute="leading" secondItem="kYB-Pa-nod" secondAttribute="leading" id="u4a-8T-chk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="kYB-Pa-nod"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="6ZV-ef-rrd"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="139" y="113"/>
+        </view>
+    </objects>
+</document>
