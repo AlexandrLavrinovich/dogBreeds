@@ -19,6 +19,8 @@ struct FavouriteFactory: FavouriteFactoryProtocol {
         let factory = FavouriteFactory()
         let vc = FavouriteVC(viewModel: viewModel, factory: factory)
         vc.modalTransitionStyle = .crossDissolve
-        return vc
+        vc.title = "Favourites"
+        let nc = MainNavigationController(rootViewController: vc)
+        return nc
     }
 }

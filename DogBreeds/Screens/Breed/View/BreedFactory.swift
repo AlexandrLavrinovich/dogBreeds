@@ -22,6 +22,7 @@ struct BreedFactory: BreedFactoryProtocol {
         let factory = BreedFactory()
         let vc = BreedVC(viewModel: viewModel, factory: factory)
         vc.modalTransitionStyle = .crossDissolve
+        vc.title = breedName
         return vc
     }
     
@@ -31,6 +32,8 @@ struct BreedFactory: BreedFactoryProtocol {
         let viewModel = BreedVM(urls: urls, breedName: breedName, service: service)
         let factory = BreedFactory()
         let vc = BreedVC(viewModel: viewModel, factory: factory)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.title = breedName
         return vc
     }
 }

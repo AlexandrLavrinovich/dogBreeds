@@ -53,9 +53,8 @@ private extension BreedVM {
             switch result {
             case .success(let resp):
                 self.handleSuccessForGet(resp: resp)
-                print(resp)
-            case .failure(let error):
-                print(error)
+            case .failure( _):
+                print("Fail")
             }
         }
     }

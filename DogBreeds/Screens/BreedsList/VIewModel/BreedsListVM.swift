@@ -46,9 +46,7 @@ private extension BreedsListVM {
             switch result {
             case .success(let resp):
                 self.handleSuccessForGet(resp: resp)
-                print("Success")
-            case .failure(let error):
-                print(error)
+            case .failure( _):
                 print("Fail")
             }
             

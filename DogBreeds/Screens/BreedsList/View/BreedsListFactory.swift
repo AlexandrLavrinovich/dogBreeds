@@ -20,7 +20,9 @@ struct BreedsListFactory: BreedsListFactoryProtocol {
         let viewModel = BreedsListVM(service: breedsListService)
         let factory = BreedsListFactory()
         let vc = BreedsListVC(viewModel: viewModel, factory: factory)
+        vc.title = "breeds"
         vc.modalTransitionStyle = .crossDissolve
-        return vc
+        let nc = MainNavigationController(rootViewController: vc)
+        return nc
     }
 }

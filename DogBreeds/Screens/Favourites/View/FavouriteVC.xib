@@ -22,25 +22,15 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6ZV-ef-rrd">
-                    <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
-                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="kYB-Pa-nod" firstAttribute="trailing" secondItem="JEh-7L-Goy" secondAttribute="trailing" id="R2N-ej-kHZ"/>
                 <constraint firstItem="JEh-7L-Goy" firstAttribute="top" secondItem="kYB-Pa-nod" secondAttribute="top" id="XuO-qk-y2b"/>
                 <constraint firstItem="kYB-Pa-nod" firstAttribute="bottom" secondItem="JEh-7L-Goy" secondAttribute="bottom" id="ll3-2n-bg2"/>
-                <constraint firstItem="6ZV-ef-rrd" firstAttribute="centerY" secondItem="kYB-Pa-nod" secondAttribute="centerY" id="obS-h3-v47"/>
-                <constraint firstItem="kYB-Pa-nod" firstAttribute="centerX" secondItem="6ZV-ef-rrd" secondAttribute="centerX" id="ogz-Mc-u6J"/>
                 <constraint firstItem="JEh-7L-Goy" firstAttribute="leading" secondItem="kYB-Pa-nod" secondAttribute="leading" id="u4a-8T-chk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="kYB-Pa-nod"/>
-            <variation key="default">
-                <mask key="subviews">
-                    <exclude reference="6ZV-ef-rrd"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="139" y="113"/>
         </view>
     </objects>

@@ -19,6 +19,7 @@ struct SubBreedsListFactory: SubBreedsListFactoryProtocol {
         let factory = SubBreedsListFactory()
         let vc = SubBreedsListVC(viewModel: viewModel, factory: factory)
         vc.modalTransitionStyle = .crossDissolve
+        vc.title = breed
         return vc
     }
 }
