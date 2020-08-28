@@ -62,8 +62,13 @@ private extension BreedVC {
         let shareButton = UIBarButtonItem(title: "share", style: .done, target: self, action: #selector(share(_:)))
         self.navigationController?.navigationBar.sizeToFit()
         self.navigationItem.rightBarButtonItem = shareButton
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = layout
         collectionView.register(UINib(nibName: BreedCell.string, bundle: nil), forCellWithReuseIdentifier: BreedCell.string)
-        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -123,20 +128,9 @@ extension BreedVC: UICollectionViewDataSource {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        for cell in collectionView.visibleCells {
-            if let row = collectionView.indexPath(for: cell)?.item {
-                print(row)
-                self.row = row
-            }
-        }
-    }
-    
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        for cell in collectionView.visibleCells {
-            if let row = collectionView.indexPath(for: cell)?.item {
-                print(row)
-//                self.row = row
-            }
+        if let indexPath = collectionView.indexPathsForVisibleItems.first {
+            print(indexPath.row)
+            self.row = indexPath.row
         }
     }
 }
@@ -153,6 +147,7 @@ extension BreedVC: UICollectionViewDelegate {
 //MARK: - UICollctionViewDelegateFlowLayout
 extension BreedVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let width = (collectionView.superview?.frame.width ?? 100)
         let barHeight = self.navigationController?.navigationBar.frame.height ?? 30
         let height = collectionView.superview?.safeAreaLayoutGuide.layoutFrame.height ?? 200
